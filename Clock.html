@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #clock
+    {
+        color: brown;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: 5px 5px 5px gray;
+        font-size: 50px;
+        width: 400px;
+        cursor: pointer;
+    }
+</style>
+
+<body onload="show()">
+    <div id="clock"> 
+
+    </div>
+    <script>
+        function show()
+        {
+            var d= new date ()
+            clock.innerhtml =d. toLocalTimeString()
+        }
+        var t= setInterval("show()",1000)
+        clock.onclick = function()
+        {
+            clearInterval(t)
+        }
+
+        clock.onmouseout= function()
+        {
+            t=setinterval("Show()",1000)
+        }
+        
+
+    </script>
+    
+</body>
+</html>
