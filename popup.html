@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .addstyle
+    {
+        width: 300px;
+        height: 400px;
+        box-shadow: 10px 10px 10px black;
+        text-align: center;
+        padding: 5px;
+        position: absolute;
+        left: 30%;
+        top: 20%;
+        background: lightblue;
+
+
+    }
+</style>
+<body>
+    <audio id="myaudio">
+        <source src="a.wav">
+    </audio>
+<script>
+    var add = document.createElement("div")
+    var s = document.getElementById("myaudio")
+
+    add.className="addstyle"
+    var mx = 0
+    var my = 0
+    function showadd()
+    {
+        add.style.left = mx-100+"px"
+        add.style.top = my-100+"px"
+        s.play()
+        document.body.style.background="black"
+        document.body.appendChild(add)
+    }
+    add.onclick= function()
+    {
+       location.href="https://theuselessweb.com/"
+
+    }
+
+    add.innerHTML="<button onclick ='closeadd()' style='margin-left:250px;margin-top:10 button> <h1> Usefull Website<h1>"
+        add.innerHTML+="<hr color = 'green' size='4' /"
+        add.innerHTML+="<imgsrc='images/Wow-gif.gif"
+
+        function closeadd()
+        {
+            document.body.removeChild(add)
+            document.body.style.background= "white"
+
+        }
+
+        setTimeout("showadd()",5000)
+        setTimeout("closeadd()",10000)
+
+        function f1 (event)
+        {
+            mx=event.pageX
+            my=event.pageY
+
+            document.title = "x = "+event.pageX+" y = "+event.pageY
+        }
+ document.addEventListener("mousemove",f1)
+
+</script>
+<h1>
+    About Amazon
+</h1>
+<p>
+    Lorem 
+</p>    
+
+
+</body>
+</html>
