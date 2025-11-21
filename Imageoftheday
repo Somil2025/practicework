@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    header{
+        text-align: center;
+    }
+
+    .pic
+    {
+        width: 70%;
+        height: 500px;
+        box-shadow: 10px 10px 10px gray;
+        margin: auto;
+        display: block;
+    }
+</style>
+<body>
+    <header>
+        <h1 id="mes">Image of the</h1>
+        <img id="pic" class="pic" src="Pic/p1.jpg">
+        <script>
+            var p = document.getElementById("pic")
+            var m = document.getElementById("mes")
+            var d = new Date()
+            var today = d.getDay()
+
+            switch(today)
+            {
+                case 1:
+                p.src="Pic/p1.jpg"
+                m.innerHTML+= "Monday"
+                document.bgColor="blue"
+                break;
+
+                case 2:
+                p.src="Pic/p2.jpg"
+                m.innerHTML+= "Tuesday"
+                document.bgColor="brown"
+                break;
+
+                case 3:
+                p.src="Pic/p3.jpg"
+                m.innerHTML+= "Wednesday"
+                document.bgColor="plum"
+                break;
+
+                case 4:
+                p.src="Pic/p4.jpg"
+                m.innerHTML+= "Thursday"
+                document.bgColor="skyblue"
+                break;
+
+                case 5:
+                p.src="Pic/p5.jpg"
+                m.innerHTML+= "Friday"
+                document.bgColor="gray"
+                break;
+
+
+                case 6:
+                p.src="Pic/p6.jpg"
+                m.innerHTML+= "Saturday"
+                document.bgColor="beige"
+                break;
+
+
+                case 0:
+                p.src="Pic/p7.jpg"
+                m.innerHTML+= "Sunday"
+                document.bgColor="teal"
+                break;
+
+
+                 
+                default:
+            }
+        </script>
+    </header>
+</body>
+</html>
