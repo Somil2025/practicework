@@ -48,10 +48,10 @@
 
 
             case "ArrowLeft" :
-                if (l<window.innerWidth-200)
+                if (l>0)
                 {
-                  l+=10
-                  bl-=10
+                  l-=10
+                  bl+=10
                 }
                sb.style.left = l+"px"
                 sb.style.transform = "rotateY(0deg)"
@@ -60,7 +60,7 @@
 
 
             case "ArrowDown" :
-                if (l<window.innerWidth-200)
+                if (t<window.innerWidth-200)
                 {
                   t=t+5
                 }
@@ -76,25 +76,12 @@
                   t=t-5
                 }
                sb.style.top = t+"px"
-                sb.style.transform = "rotateY(0deg)"
-                back.style.left=bl+"px"
+                
             break;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         }
     }
+    document.addEventListener("keydown",f1)
 </script>
 
 </html>
