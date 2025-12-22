@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #box1 
+    {
+        background: blue; 
+        height: 200px;
+        width: 600%;            
+        position: relative;
+        left: -400px;
+        transition: 0.5s;
+    }
+
+    #box1 img
+    
+    {
+        width: 200px;
+        height: 200px;
+        transition: 0.5s;
+    }
+
+    #mask
+    
+    {
+        width: 200px;
+        height: 200px;
+        background: red;
+        overflow: hidden;
+        position: relative;
+    }
+</style>
+
+<body>
+    <div id="mask">
+        <div id="box1">
+            <img src="images/p1.jpg">
+            <img src="images/p2.jpg">
+            <img src="images/p3.jpg">
+            <img src="images/p4.jpg">
+            <img src="images/p5.jpg">
+        </div>
+    </div>
+
+ <input id="slider" type="range" max="600" min="-400" value="-400">
+
+    <script>
+ var s = document.getElementById("slider");
+   var b = document.getElementById("box1");
+
+        s.oninput = function ()
+        
+        {
+            var m = this.value;
+            b.style.left = m + "px";
+            document.title = this.value;
+        }
+    </script>
+
+</body>
+</html>
