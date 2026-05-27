@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dynamic Interactive Gallery</title>
+
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    
+
+    <style>
+
+        body {
+
+            text-align: center;
+
+            background-color: #f8f9fa;
+
+            font-family: Arial, sans-serif;
+
+            padding: 40px 20px;
+
+        }
+
+        .gallery-container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+        .pic {
+
+            width: 20%;
+
+            min-width: 150px;
+
+            height: auto;
+
+            cursor: pointer;
+
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.15);
+
+            border-radius: 4px;
+
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        }
+
+        .zoom {
+
+            width: 25%;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="gallery-container" id="gallery"></div>
+
+
+
+    <script>
+
+        const TOTAL_IMAGES = 5; 
+
+
+
+        function buildGallery() {
+
+            const gallery = document.getElementById('gallery');
+
+            
+
+            for (let i = 1; i <= TOTAL_IMAGES; i++) 
+            {
+
+
+                const img = document.createElement('img');
+
+                img.src = `images/p${i}.png`;
+
+                img.className = 'pic animate__animated animate__bounce';
+
+                img.addEventListener('mouseover', function() {
+
+                    this.classList.add('animate__flip', 'zoom');
+
+                });
+
+
+
+                img.addEventListener('click', function() {
+
+                    this.classList.remove('animate__flip', 'zoom');
+
+                });
+
+
+                gallery.appendChild(img);
+
+            }
+
+            
+
+            document.title = "Gallery Loaded Successfully";
+
+        }
+
+        document.addEventListener('DOMContentLoaded', buildGallery);
+
+    </script>
+
+</body>
+
+</html>
