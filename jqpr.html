@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Error</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div {
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            transition: transform 0.2s ease;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            margin-top: 10px;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="b1">Button 1 (b1)</button>
+    <button id="b2">Button 2 (b2)</button>
+
+    <hr>
+
+    <div>
+        Hover over this DIV element to change its styles dynamically!
+    </div>
+
+    <img src="images/p1.png" alt="Demo Image">
+
+    <script>
+        var b1 = document.getElementById("b1");
+        var b2 = document.getElementById("b2");
+
+        // Fixed: Removed the stray single slash here
+        b1.onclick = function() {
+            alert("Welcome to Js");
+        };
+
+        var a = () => {
+            alert("hello");
+        };
+
+        const sum = (n1, n2) => {
+            var t = n1 + n2;
+            alert(t);
+        };
+
+        const total = (a1, a2) => {
+            document.title = "Done";
+            return (a1 + a2);
+        };
+
+        b2.onclick = function() {
+            var d = total(5, 5);
+            alert("Sum = " + d);
+        };
+
+        function wel() {
+            alert("welcome to Jquery");
+        }
+
+        $(document).ready(function() {
+            $("div").mouseover(function() {
+                $(this).css({
+                    "cursor": "pointer",
+                    "color": "green",
+                    "background-color": "yellow",
+                    "border": "5px black dotted"
+                });
+            });
+
+            $("div").mouseout(function() {
+                $(this).css({
+                    "color": "black",
+                    "background-color": "white",
+                    "border": "1px solid #ccc" // Fixed: 0px border makes the div jump, matching your CSS looks cleaner
+                });
+            });
+
+            $("img").mouseover(function() {
+                $(this).css("transform", "scale(1.05)");
+            });
+
+            $("img").mouseout(function() {
+                $(this).css("transform", "scale(1)");
+            });
+        });
+    </script>
+
+</body>
+</html>
